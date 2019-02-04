@@ -48,7 +48,7 @@ variable "source_image" {
 variable "startup_script" {
   description = "A Startup Script to execute when the server first boots. We remmend passing in a bash script that executes the run-consul script, which should have been installed in the Consul Google Image by the install-consul module."
 
-  #default     = "/opt/consul/bin/run-consul --server --cluster-tag-name cat-consul"
+  default     = "/opt/consul/bin/run-consul --server --cluster-tag-name cat-consul"
 }
 
 # ---------------------------------------------------------------------------------------------------------------------
@@ -122,7 +122,7 @@ variable "instance_group_update_strategy" {
 variable "allowed_inbound_cidr_blocks_http_api" {
   description = "A list of CIDR-formatted IP address ranges from which the Compute Instances will allow API connections to Consul."
   type        = "list"
-  default     = []
+  default     = ["0.0.0.0/0"]
 }
 
 variable "allowed_inbound_tags_http_api" {
