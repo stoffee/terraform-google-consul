@@ -14,7 +14,7 @@ terraform {
 # Create the Regional Managed Instance Group where Consul Server will live.
 resource "google_compute_region_instance_group_manager" "consul_server" {
   project = "${var.gcp_project_id}"
-  name    = "${var.cluster_name}-ig-v"
+  name    = "${var.cluster_name}-ig"
 
   base_instance_name = "${var.cluster_name}"
   instance_template  = "${data.template_file.compute_instance_template_self_link.rendered}"
@@ -201,7 +201,7 @@ resource "google_compute_firewall" "allow_inbound_http_api" {
 
   project = "${var.network_project_id != "" ? var.network_project_id : var.gcp_project_id}"
 
-  name    = "${var.cluster_name}-rule-external-api-access-cs"
+  name    = "${var.cluster_name}-rule-external-api-access"
   network = "${var.network_name}"
 
   allow {
