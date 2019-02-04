@@ -201,7 +201,7 @@ resource "google_compute_firewall" "allow_inbound_http_api" {
 
   project = "${var.network_project_id != "" ? var.network_project_id : var.gcp_project_id}"
 
-  name    = "${var.cluster_name}-rule-external-api-access"
+  name    = "${var.cluster_name}-rule-external-api-access-cs"
   network = "${var.network_name}"
 
   allow {
