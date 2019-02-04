@@ -17,14 +17,12 @@ variable "gcp_region" {
 
 variable "cluster_name" {
   description = "The name of the Consul cluster (e.g. consul-stage). This variable is used to namespace all resources created by this module."
-
-  #default     = "cat-consul"
+  default     = "cat-consul"
 }
 
 variable "cluster_tag_name" {
   description = "The tag name the Compute Instances will look for to automatically discover each other and form a cluster. TIP: If running more than one Consul Server cluster, each cluster should have its own unique tag name."
-
-  #default     = "cat-consul"
+  default     = "cat-consul"
 }
 
 variable "machine_type" {
