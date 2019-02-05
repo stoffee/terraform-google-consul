@@ -126,7 +126,7 @@ variable "allowed_inbound_cidr_blocks_http_api" {
 variable "allowed_inbound_tags_http_api" {
   description = "A list of tags from which the Compute Instances will allow API connections to Consul."
   type        = "list"
-  default     = []
+  default     = ["cat-consul"]
 }
 
 variable "allowed_inbound_cidr_blocks_dns" {
